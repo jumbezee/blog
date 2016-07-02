@@ -5,6 +5,40 @@
 	<link data-require="bootstrap-css@3.3.6" data-semver="3.3.6" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
 <head>
   <title>Blog</title>
+  <div class="bs-example bs-navbar-top-example" data-example-id="navbar-fixed-to-top"> 
+  	<nav class="navbar navbar-default navbar-fixed-top">  
+  		<div class="container-fluid"> 
+  			<div class="navbar-header"> 
+  				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-6" aria-expanded="false"> 
+  					<span class="sr-only">Toggle navigation</span> 
+  					<span class="icon-bar"></span> 
+  					<span class="icon-bar"></span> 
+  					<span class="icon-bar"></span> 
+  				</button> 
+  					<a class="navbar-brand" href="/home/index">Блог на RoR</a> 
+  			</div> 
+  			
+  				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6"> 
+  					
+  					<ul class="nav navbar-nav"> 
+  			
+  						<li class="active"><a href="/home/index">Home</a></li> 
+  						<li><a href="/about">About</a></li> 
+  						<li><a href="/articles">Все посты</a></li> 
+  						<li><a href="/terms">Terms</a></li> 
+  					</ul>
+  						<div align = "right">
+		  						<% if user_signed_in? %>
+									<%= current_user.username %> | <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "btn btn-default navbar-btn"%>
+								<% else %>
+									<%= link_to 'Sign in', new_user_session_path, class: "btn btn-default navbar-btn"%> 
+								<% end %>	
+						</div>		
+  			
+  				</div> 
+  		</div> 
+  	</nav> 
+  </div>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -12,7 +46,7 @@
 </head>
 <body>
 <div class="container">
-	<div class="row">
+	<!-- <div class="row">
 		<div class="col-xs-3 col-xs-offset-9">
 			<% if user_signed_in? %>
 				<%= current_user.username %> | <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
@@ -20,7 +54,7 @@
 				<%= link_to 'Sign in', new_user_session_path %> 
 			<% end %>
 		</div>
-	</div>
+	</div> -->
 	<div class="row">
 		<div class="col-xs-4">
 			<p class="notice"><%= notice %></p>
