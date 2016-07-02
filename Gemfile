@@ -1,10 +1,6 @@
  source 'https://rubygems.org'
 
-group :development, :test do
-  gem 'rspec-rails', '~> 2.4'
-  gem 'shoulda-matchers', '~> 2.4'
-  gem 'capybara'
-end
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
@@ -48,5 +44,12 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+end
+
+group :development, :test do
+  gem 'rspec-rails', '~> 2.4'
+  gem 'shoulda-matchers', '~> 2.4'
+  gem 'capybara'
+  gem "factory_girl_rails", "~> 4.0"
 end
 
