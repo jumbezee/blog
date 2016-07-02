@@ -1,7 +1,8 @@
  source 'https://rubygems.org'
 
-group :test, :development do
-  gem "rspec-rails", "~> 2.4"
+group :development, :test do
+  gem 'rspec-rails', '~> 2.4'
+  gem 'shoulda-matchers', '~> 2.4'
   gem 'capybara'
 end
 
