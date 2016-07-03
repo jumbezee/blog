@@ -9,7 +9,9 @@
 <% @article.comments.each do |comment| %>
 
 	<p><%= current_user.username %> said:</p>
-	<i><%= comment.body %> </i>
+	
+	<i><%= comment.body%> </i>
+
 
 <hr />
 <% end %>
@@ -24,7 +26,15 @@
 	</p> -->
 	<p>
 		<%= f.label :body %><br />
-		<%= f.text_area :body %>
+		<%= f.text_area :body, style: "width: 80%;
+  max-width: 550px;
+  margin: 3em auto;
+  padding: 1em;
+  box-shadow:
+   -20px 20px 0 -17px #fff,
+   20px -20px 0 -17px #fff,
+   20px 20px 0 -20px #c27153,
+   0 0 0 2px #c27153;" %>
 	</p>
 	<p>
 		<%= f.submit %>
