@@ -1,15 +1,29 @@
 
 <% @articles.each do |article| %>
+	<div class="boxshadow">
+	<h2 style="text-align: center"><%= article.title %></h2>
 
-	<h2><%= article.title %></h2>
+	<br />
+	<br />
 	<p>
 		<%= article.text%>
 	</p>
-	<p>
-		<%= link_to 'Show this artcile', article_path(article) %> |
-		<%= link_to 'Edit', edit_article_path(article) %> |
-		<%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: 'Are you sure?'} %>
-	</p>
+	</div>
+	<% if user_signed_in?%>
+	<%@a = ''%>
+    <% else %>
+    <%@a =  'hidden'%> 
+    <% end %>
+	<div class="btn-group" role="group" aria-label="...">
+	 	<%= link_to 'Show this artcile', article_path(article), type: "button", class: "btn btn-default"%> 
+		<%= link_to 'Edit', edit_article_path(article), type: "button", class: "btn btn-default ", class: @a%> 
+		<%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: 'Are you sure?'}, type: "button", class: "btn btn-default", class: @a %>
+	</div>
 	
-<hr />
+
+	<% if !user_signed_in?%>
+	<%= link_to 'Войти', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path %>
+    <% end %>
 <% end %>
+
+

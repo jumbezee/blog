@@ -1,7 +1,7 @@
 class Article < ActiveRecord::Base
   validates :title, presence: true, length: { in: 1..20 }
   validates :text, presence: true, length: { in: 10..1000 }
-
+  belongs_to :user
   has_many :comments
 
   def subject

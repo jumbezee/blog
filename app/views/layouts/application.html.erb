@@ -2,10 +2,12 @@
 <html>
 	<!-- bootstrap! -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link data-require="bootstrap-css@3.3.6" data-semver="3.3.6" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
-  <link rel="stylesheet" href="app/assets/stylesheets/reset.css">
-  <link rel="stylesheet" href="app/assets/stylesheets/animate.css">
-  <link rel="stylesheet" href="app/assets/stylesheets/styles.css">
+	
+ 
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
 <head>
   <title>Blog</title>
   <div class="bs-example bs-navbar-top-example" data-example-id="navbar-fixed-to-top"> 
@@ -33,10 +35,30 @@
   					</ul>
   						<div align = "right">
 		  						<% if user_signed_in? %>
-									<%= current_user.username %> | <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "btn btn-default navbar-btn"%>
+									<%= current_user.username %> | <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "btn btn-default navbar-btn", style: "width: 80%;
+  max-width: 90px;
+  box-shadow:
+   0 1px 4px rgba(0, 0, 0, .3),
+   -20px 0 20px -20px rgba(0, 0, 0, .8),
+   20px 0 20px -20px rgba(0, 0, 0, .8),
+   0 0 40px rgba(0, 0, 0, .1) inset;"%>
 								<% else %>
                 
-									<%= link_to 'Sign in', new_user_session_path, type: "buttonb"%> 
+                <%= link_to 'Sign up', new_user_registration_path, class: "btn btn-default navbar-btn", style: "width: 80%;
+  max-width: 90px;
+  box-shadow:
+   0 1px 4px rgba(0, 0, 0, .3),
+   -20px 0 20px -20px rgba(0, 0, 0, .8),
+   20px 0 20px -20px rgba(0, 0, 0, .8),
+   0 0 40px rgba(0, 0, 0, .1) inset;"%> 
+									
+                <%= link_to 'Sign in', new_user_session_path, class: "btn btn-default navbar-btn", style: "width: 80%;
+  max-width: 90px;
+  box-shadow:
+   0 1px 4px rgba(0, 0, 0, .3),
+   -20px 0 20px -20px rgba(0, 0, 0, .8),
+   20px 0 20px -20px rgba(0, 0, 0, .8),
+   0 0 40px rgba(0, 0, 0, .1) inset;"%> 
                
 								<% end %>	
 						</div>		
@@ -46,9 +68,6 @@
   	</nav> 
   </div>
 
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
 </head>
 <body>
 <div class="container">
@@ -62,11 +81,11 @@
 		</div>
 	</div> -->
 	<div class="row">
-		<div class="col-xs-4">
+		
 			<p class="notice"><%= notice %></p>
 		    <p class="alert"><%= alert %></p>
 			<%= yield %>
-		</div>
+
 	</div>
 </div>
 </body>

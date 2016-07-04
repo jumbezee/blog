@@ -22,14 +22,42 @@
 /* Basics */
 
 html, body {
-	background: white url('../img/bg.png');
-	background-repeat: repeat-x;
+	background-image: url('../img/xxxx.jpg');
 }
 
-#container {
+#containerup {
 	position: fixed;
 	width: 340px;
-	height: 280px;
+	height: 436px;
+	top: 50%;
+	left: 50%;
+	margin-top: -140px;
+	margin-left: -170px;
+	background: #fff;
+	border-radius: 3px;
+	border: 1px solid #ccc;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+	-webkit-animation-name: bounceIn;
+	-webkit-animation-fill-mode: both;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: linear;
+	-moz-animation-name: bounceIn;
+	-moz-animation-fill-mode: both;
+	-moz-animation-duration: 1s;
+	-moz-animation-iteration-count: 1;
+	-moz-animation-timing-function: linear;
+	animation-name: bounceIn;
+	animation-fill-mode: both;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+	animation-timing-function: linear;
+}
+
+#containerin {
+	position: fixed;
+	width: 340px;
+	height: 264px;
 	top: 50%;
 	left: 50%;
 	margin-top: -140px;
@@ -166,54 +194,87 @@ input[type=submit]:active {
 	background-image: -moz-linear-gradient(top left 90deg, #6ec2e8 0%, #b6e2ff 100%);
 	background-image: linear-gradient(top left 90deg, #6ec2e8 0%, #b6e2ff 100%);
 }
-/* Стили бара vladmaxi, можно удалить */
-.vladmaxi-top{
-	line-height: 24px;
-	font-size: 11px;
-	background: #eee;
-	text-transform: uppercase;
-	z-index: 9999;
-	position: fixed;
-	top:0;
-	left:0;
-	width:100%;
-	font-family: calibri;
-	font-size: 13px;
-	box-shadow: 1px 0px 2px rgba(0,0,0,0.2);
-	-webkit-animation: slideOut 0.3s ease-in-out 0.1s backwards;
+
+h1 {
+	color: #333333;
 }
-@-webkit-keyframes slideOut{
-	0%{top:-30px; opacity: 0;}
-	100%{top:0px; opacity: 1;}
+h2 {
+	color: #333333;
+}
+h3 {
+	color: #333333;
+}
+.speech-bubble {
+  position: relative;
+  background-color: #333333;
+  width: 1200px;
+  height: 80px;
+  line-height: 40px; /* vertically center */
+  color: #FFFFFF;
+  text-align: center;
+  border-radius: 20px;
+  font-family: sans-serif;
 }
 
-.vladmaxi-top a{
-	padding: 0px 10px;
-	letter-spacing: 1px;
-	color: #333;
-	text-shadow: 0px 1px 1px #fff;
-	display: block;
-	float: left;
+.speech-bubble1 {
+  position: relative;
+  background-color: #003300;
+  width: 1200px;
+  height: 80px;
+  line-height: 40px; /* vertically center */
+  color: #CCFFCC;
+  text-align: center;
+  border-radius: 300px;
+  font-family: sans-serif;
 }
-.vladmaxi-top a:hover{
-	background: #fff;
+.speech-bubble:after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 0;
+  border: 15px solid;
 }
-.vladmaxi-top span.right{
-	float: right;
+ 
+/* Position the Arrow */
+ 
+.speech-bubble-top:after {
+  border-bottom-color: #333333;
+ 
+  left: 92%;
+  bottom: 100%;
+  margin-left: 15px;
 }
-.vladmaxi-top span.right a{
-	float: left;
-	display: block;
+.speech-bubble-right:after {
+  border-left-color: #292929;
+ 
+  left: 100%;
+  top: 50%;
+  margin-top: -15px;
 }
-
-.buttonb {
- width: 80%;
-  max-width: 90px;
-  box-shadow:
-   0 1px 4px rgba(0, 0, 0, .3),
-   -20px 0 20px -20px rgba(0, 0, 0, .8),
-   20px 0 20px -20px rgba(0, 0, 0, .8),
-   0 0 40px rgba(0, 0, 0, .1) inset;
+ 
+.speech-bubble-bottom:after {
+  border-top-color: #333333;
   
+  top: 100%;
+  left: 89%;
+  margin-left: -15px;
+}
+ 
+.speech-bubble-left:after {
+  border-right-color: #292929;
+  top: 50%;
+  right: 100%;
+  margin-top: -15px;
+}
 
+.boxshadow {
+  width: 100%;
+  max-width: 1200px;
+  margin: 10px auto;
+  padding: 1em;
+  box-shadow:
+   0 1px 4px #C3FFC3,
+   -23px 0 20px -23px #C3FFC3,
+   23px 0 20px -23px #C3FFC3,
+   0 0 40px #C3FFC3 inset;
 }
