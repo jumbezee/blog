@@ -3,6 +3,9 @@
 	<!-- bootstrap! -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link data-require="bootstrap-css@3.3.6" data-semver="3.3.6" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+  <link rel="stylesheet" href="app/assets/stylesheets/reset.css">
+  <link rel="stylesheet" href="app/assets/stylesheets/animate.css">
+  <link rel="stylesheet" href="app/assets/stylesheets/styles.css">
 <head>
   <title>Blog</title>
   <div class="bs-example bs-navbar-top-example" data-example-id="navbar-fixed-to-top"> 
@@ -33,13 +36,7 @@
 									<%= current_user.username %> | <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "btn btn-default navbar-btn"%>
 								<% else %>
                 
-									<%= link_to 'Sign in', new_user_session_path, class: "btn btn-default navbar-btn", style: "width: 80%;
-  max-width: 90px;
-  box-shadow:
-   0 1px 4px rgba(0, 0, 0, .3),
-   -20px 0 20px -20px rgba(0, 0, 0, .8),
-   20px 0 20px -20px rgba(0, 0, 0, .8),
-   0 0 40px rgba(0, 0, 0, .1) inset;"%> 
+									<%= link_to 'Sign in', new_user_session_path, type: "buttonb"%> 
                
 								<% end %>	
 						</div>		
