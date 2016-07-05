@@ -21,8 +21,25 @@
 
 /* Basics */
 
-html, body {
-	background-image: url('../img/xxxx.jpg');
+/* Отступ сверху для содержимого body (высота navbar = 50px)*/
+body
+{
+padding-top: 0px;
+}
+/* Заставка */
+.splash { 
+/* Отступ для содержимого, помещенного в splash */
+padding:9em 0 2em;
+/* Картинка, которая используются для splash */
+background-color: #CCFFCC;
+/* Масштабируем картинку с сохранением пропорций */
+background-size:cover;
+/* Запрещаем фоновому изображению прокручиваться, т.е. делаем его неподвижным */
+background-attachment:fixed;
+/* Цвет текста */
+color:#001E00;
+/* Выравниваем текста внутри splash по центру */
+text-align:center;
 }
 
 #containerup {
@@ -33,10 +50,10 @@ html, body {
 	left: 50%;
 	margin-top: -140px;
 	margin-left: -170px;
-	background: #fff;
+	background: #DBFFCD;
 	border-radius: 3px;
-	border: 1px solid #ccc;
-	box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+	border: 1px solid #DBFFCD;
+	box-shadow: 0 1px 2px #DBFFCD;
 	-webkit-animation-name: bounceIn;
 	-webkit-animation-fill-mode: both;
 	-webkit-animation-duration: 1s;
@@ -62,10 +79,10 @@ html, body {
 	left: 50%;
 	margin-top: -140px;
 	margin-left: -170px;
-	background: #fff;
+	background: #DBFFCD;
 	border-radius: 3px;
-	border: 1px solid #ccc;
-	box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+	border: 1px solid #DBFFCD;
+	box-shadow: 0 1px 2px #DBFFCD;
 	-webkit-animation-name: bounceIn;
 	-webkit-animation-fill-mode: both;
 	-webkit-animation-duration: 1s;
@@ -177,23 +194,20 @@ input[type=submit] {
 	height: 30px;
 	font-size: 14px;
 	font-weight: bold;
-	color: #fff;
-	border: 1px solid #66add6;
-	box-shadow: 0 1px 2px rgba(0, 0, 0, .3), inset 0 1px 0 rgba(255, 255, 255, .5);
+	color: #0A2300;
+	border: 1px solid #DBFFCD;
+	box-shadow: 0 1px 2px #DBFFCD, inset 0 1px 0 #DBFFCD;
 	cursor: pointer;
 }
 
 input[type=submit]:hover {
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#b6e2ff), to(#6ec2e8));
-	background-image: -moz-linear-gradient(top left 90deg, #b6e2ff 0%, #6ec2e8 100%);
-	background-image: linear-gradient(top left 90deg, #b6e2ff 0%, #6ec2e8 100%);
+	
 }
 
 input[type=submit]:active {
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#6ec2e8), to(#b6e2ff));
-	background-image: -moz-linear-gradient(top left 90deg, #6ec2e8 0%, #b6e2ff 100%);
-	background-image: linear-gradient(top left 90deg, #6ec2e8 0%, #b6e2ff 100%);
+	
 }
+
 
 h1 {
 	color: #333333;
@@ -273,8 +287,34 @@ h3 {
   margin: 10px auto;
   padding: 1em;
   box-shadow:
-   0 1px 4px #C3FFC3,
-   -23px 0 20px -23px #C3FFC3,
-   23px 0 20px -23px #C3FFC3,
-   0 0 40px #C3FFC3 inset;
+   0 1px 4px #DBFFCD,
+   -23px 0 20px -23px #0A2300,
+   23px 0 20px -23px #0A2300,
+   0 0 40px rgba(0, 0, 0, .1) inset;
+}
+.boxshadowp {
+  width: 100%;
+  height: 470px auto;
+  max-width: 1200px;
+  margin: 10px auto;
+  padding: 1em;
+  box-shadow:
+   0 1px 4px #DBFFCD,
+   -23px 0 20px -23px #0A2300,
+   23px 0 20px -23px #0A2300,
+   0 0 40px rgba(0, 0, 0, .1) inset;
+  border-color: white;
+}
+.boxshadowtext {
+  width: 100%;
+  height: 200px;
+  max-width: 1200px;
+  margin: 10px auto;
+  padding: 1em;
+  box-shadow:
+   0 1px 4px #DBFFCD,
+   -23px 0 20px -23px #0A2300,
+   23px 0 20px -23px #0A2300,
+   0 0 40px rgba(0, 0, 0, .1) inset;
+  border-color: white;
 }

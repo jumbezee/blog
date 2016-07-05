@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_filter :authenticate_user!, :only => [:new, :create]
+  before_filter :authenticate_user!, :only => [:create, :update, :destroy, :new, :edit, :show]
   
   def index
     @articles= Article.all
@@ -7,6 +7,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    @commentt = Comment.find_by(params[:article_id])
   end
 
   def edit
@@ -44,6 +45,7 @@ class ArticlesController < ApplicationController
   end
 
   private
+
 
   def article_params
     params.require(:article).permit(:title, :text)

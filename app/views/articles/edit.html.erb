@@ -1,24 +1,36 @@
-<h1>Edit article</h1>
+<%@title = 'Edit article' %>
+<%@body = 'You edit ' + @article.title %>
 
+
+<div class="boxshadowp">
 <%= form_for :article, url: article_path(@article), method: :put do |f| %>
 	<% if @article && @article.errors.any? %>
 	<p>
 		<ul>
 		<% @article.errors.full_messages.each do |msg| %>
-			<li><%= msg %></li>
+			<div class="alert alert-danger">
+				<li><%= msg %></li>
+			</div>
 		<% end %>
 		</ul>
 	</p>
 	<% end %>
 	<p>
 		Title <br />
-		<%= f.text_field :title %>
+		<%= f.text_area :title, style: "width: 200px;height: 70px", class: "boxshadowtext"%>
 	</p>
 	<p>
 		Text <br />
-		<%= f.text_area :text%>
+		<%= f.text_area :text, class: "boxshadowtext"%>
 	</p>
 	<p>
-		<%= f.submit %>
+		<%= f.submit "Edit", class: "btn btn-default", style: "width: 80%;
+  max-width: 90px;
+  box-shadow:
+   0 1px 4px rgba(0, 0, 0, .3),
+   -20px 0 20px -20px rgba(0, 0, 0, .8),
+   20px 0 20px -20px rgba(0, 0, 0, .8),
+   0 0 40px rgba(0, 0, 0, .1) inset;" %>
 	</p>
 <% end %> 
+</div>

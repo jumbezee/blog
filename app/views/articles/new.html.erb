@@ -1,4 +1,5 @@
-<h1>New article</h1>
+<%@title = 'New article' %>
+<%@body = 'Please, type your article'%>
 
 <%= form_for :article, url: articles_path do |f| %>
 	<% if @article && @article.errors.any? %>
@@ -10,16 +11,21 @@
 		</ul>
 	</p>
 	<% end %>
-	<p>
-		Title <br />
-		<%= f.text_field :title, class: "form-control", placeholder: "Title input", style: "width: 200px"%>
-	</p>
-	<p>
-		Text <br />
-		<%= f.text_area :text, class: "form-control", placeholder: "Text input", style: "width: 600px" %>
-	</p>
-	<p>
-		<%= f.submit "Add post", class: "btn btn-success"%>
-	</p>
+	<div class="boxshadowp">
+				<%= f.label :tittle %>
+				<br />
+		  		<%= f.text_area :title, placeholder: "Title input", style: "width: 200px;height: 70px", class: "boxshadowtext"%>
+		  		<br />
+		  		<%= f.label :text%>
+		  		<%= f.text_area :text, placeholder: "Text input", class: "boxshadowtext"%>
+		  		<%= f.submit "Add post", class: "btn btn-default", style: "width: 80%;
+  max-width: 90px;
+  box-shadow:
+   0 1px 4px rgba(0, 0, 0, .3),
+   -20px 0 20px -20px rgba(0, 0, 0, .8),
+   20px 0 20px -20px rgba(0, 0, 0, .8),
+   0 0 40px rgba(0, 0, 0, .1) inset;"%>
+		  	
+	</div>
 <% end %> 
 

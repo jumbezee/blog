@@ -1,47 +1,47 @@
-<h1>
-	<%=@article.title%>
-</h1>
-<p>
-	<%= @article.text %>
-</p>
+<%@title = @article.title %>
+<%@body = ''%>
+<div class="boxshadowp">
 
-<h2>Comments</h2>
+<p class="text-justify">
+	<%= @article.text%>
+</p>
+</div>
+
 
 
 
 
 
 <% @article.comments.each do |comment| %>
-	
-	    
-	<%= comment.author%> Said: 
-	<i><%= comment.body%> </i>
- 	
+<blockquote>	
 
-<hr />
+	<p><%= comment.body%> </p>
+	<small><%= comment.author%> <cite> <%= comment.created_at %></cite></small>
+ 	
+</blockquote>
 <% end %>
 
-<h2>Add comments</h2>
-<p>
+<h2 style="text-align: center">Add comments</h2>
+
 <%= form_for([@article, @article.comments.build]) do |f| %>
 		<%= f.text_area :author, class: "hidden", value: current_user.username %>
-	  	
+	<form>  	
+	<blockquote>	
 	<p>
-		<%= f.label :body %><br />
-		<%= f.text_area :body, style: "width: 80%;
-  max-width: 550px;
-  margin: 3em auto;
-  padding: 1em;
+		<%= f.label :body, class: "hidden" %><br />
+		<%= f.text_area :body, class: "boxshadowtext"%>
+	</p>
+	<p>
+		<%= f.submit "Add comment", class: "btn btn-default", style: "width: 100%;
+  max-width: 120px;
   box-shadow:
-   -20px 20px 0 -17px #fff,
-   20px -20px 0 -17px #fff,
-   20px 20px 0 -20px #c27153,
-   0 0 0 2px #c27153;" %>
+   0 1px 4px rgba(0, 0, 0, .3),
+   -20px 0 20px -20px rgba(0, 0, 0, .8),
+   20px 0 20px -20px rgba(0, 0, 0, .8),
+   0 0 40px rgba(0, 0, 0, .1) inset;" %>
 	</p>
-	<p>
-		<%= f.submit %>
-	</p>
-	</p>
+	</blockquote>
+	</form>
 <% end %> 
 </p>
 

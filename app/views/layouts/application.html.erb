@@ -10,7 +10,7 @@
   <%= csrf_meta_tags %>
 <head>
   <title>Blog</title>
-  <div class="bs-example bs-navbar-top-example" data-example-id="navbar-fixed-to-top"> 
+
   	<nav class="navbar navbar-default navbar-fixed-top">  
   		<div class="container-fluid"> 
   			<div class="navbar-header"> 
@@ -20,7 +20,7 @@
   					<span class="icon-bar"></span> 
   					<span class="icon-bar"></span> 
   				</button> 
-  					<a class="navbar-brand" href="/home/index">Блог на RoR</a> 
+  					<a class="navbar-brand" href="/home/index">Home#ix</a> 
   			</div> 
   			
   				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6"> 
@@ -66,26 +66,23 @@
   				</div> 
   		</div> 
   	</nav> 
+
+<!-- Заставка -->
+<div class="splash">
+  <div class="container">
+    <!-- Текст, размещенный на заставке -->
+    <h1><%=@title%></h1>
+    <p><%=@body%></p>
   </div>
+</div>
 
 </head>
 <body>
 <div class="container">
-	<!-- <div class="row">
-		<div class="col-xs-3 col-xs-offset-9">
-			<% if user_signed_in? %>
-				<%= current_user.username %> | <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-			<% else %>
-				<%= link_to 'Sign in', new_user_session_path %> 
-			<% end %>
-		</div>
-	</div> -->
 	<div class="row">
-		
 			<p class="notice"><%= notice %></p>
 		    <p class="alert"><%= alert %></p>
 			<%= yield %>
-
 	</div>
 </div>
 </body>

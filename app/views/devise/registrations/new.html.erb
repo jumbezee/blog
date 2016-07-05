@@ -16,7 +16,13 @@
        <%= f.password_field :password_confirmation, autocomplete: "off"%>
       <div id="lower">
         <input type="checkbox"><label class="check" for="checkbox">Запомнить меня</label>
-        <%= f.submit "Sign up", type: "submit", value: "Sign up" %>
+        <%= f.submit "Sign up", class: "btn btn-default", style: "width: 100%;
+  max-width: 90px;
+  box-shadow:
+   0 1px 4px rgba(0, 0, 0, .3),
+   -20px 0 20px -20px rgba(0, 0, 0, .8),
+   20px 0 20px -20px rgba(0, 0, 0, .8),
+   0 0 40px rgba(0, 0, 0, .1) inset;", value: "Sign up"%>
       </div>
 
     </form>
