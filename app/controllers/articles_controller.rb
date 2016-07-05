@@ -8,6 +8,7 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
     @commentt = Comment.find_by(params[:article_id])
+    UserMailer.welcome_email('kuz-kol@mail.ru').deliver_now
   end
 
   def edit

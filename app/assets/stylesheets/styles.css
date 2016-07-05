@@ -24,6 +24,7 @@
 /* Отступ сверху для содержимого body (высота navbar = 50px)*/
 body
 {
+	 background: url(../img/bg.png) repeat;
 padding-top: 0px;
 }
 /* Заставка */
@@ -209,14 +210,17 @@ input[type=submit]:active {
 }
 
 
-h1 {
-	color: #333333;
-}
-h2 {
-	color: #333333;
-}
-h3 {
-	color: #333333;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 35px;
+  text-transform: uppercase;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 .speech-bubble {
   position: relative;
