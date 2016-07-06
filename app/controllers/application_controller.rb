@@ -5,7 +5,6 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
   
-
   private
 
   def authenticate_user!
@@ -13,11 +12,7 @@ class ApplicationController < ActionController::Base
         if request.xhr?
           render json: {msg: "Вы не авторизованы"}, status: 403            
         else
-          # Сказать UserMailer отослать приветственное письмо после сохранения
-          # UserMailer.welcome_email(@user).deliver_now
-
-          # format.html { redirect_to(@user, notice: 'User was successfully created.') }
-          # format.json { render json: @user, status: :created, location: @user }
+          
 
           redirect_to root_path
         end
